@@ -58,7 +58,7 @@ list_path *add_node_end(list_path **head, char *str)
 
 	new->dir = str;
 
-	new->p = '\0';
+	new->p = NULL;
 	if (!*head)
 	{
 		*head = new;
@@ -87,7 +87,7 @@ list_path *add_node_end(list_path **head, char *str)
  */
 list_path *linkpath(char *path)
 {
-	list_path *head = '\0';
+	list_path *head = NULL;
 	char *token;
 	char *cpath = _strdup(path);
 

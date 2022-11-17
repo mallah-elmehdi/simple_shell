@@ -109,7 +109,7 @@ void _setenv(char **arv)
 	{
 
 		environ[i] = concat_all(arv[1], "=", arv[2]);
-		environ[i + 1] = '\0';
+		environ[i + 1] = NULL;
 
 	}
 }
