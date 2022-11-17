@@ -86,13 +86,6 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 
-#define INFO_INIT
-{
-	NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, /
-												  NULL,
-		NULL, NULL, 0, 0, NULL, 0, 0, 0
-}
-
 /**
  *struct builtin - contains a builtin string and related function
  *@type: the builtin command flag
@@ -142,7 +135,7 @@ void print_error(info_t *, char *);
 int print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
-int _exit(info_t *);
+int _the_exit(info_t *);
 int _cd(info_t *);
 int _help(info_t *);
 int _history(info_t *);
@@ -181,6 +174,7 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
-void fork_cmd_help(info_t *info);
+void find_cmd_help(info_t *info);
+void init(info_t *info);
 
 #endif

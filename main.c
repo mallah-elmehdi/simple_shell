@@ -1,6 +1,35 @@
 #include "shell.h"
 
 /**
+ * init - init
+ * @info: param
+ *
+ * Return: vvoid
+ */
+
+void init(info_t *info)
+{
+	info->arg = NULL;
+	info->argv = NULL;
+	info->path = NULL;
+	info->argc = 0;
+	info->line_count = 0;
+	info->error_num = 0;
+	info->linecount_flag = 0;
+	info->fname = NULL;
+	info->env = NULL;
+	info->history = NULL;
+	info->alias = NULL;
+	info->environ = NULL;
+	info->env_changed = 0;
+	info->status = 0;
+	info->cmd_buf = NULL;
+	info->cmd_buf_type = 0;
+	info->readfd = 0;
+	info->histcount = 0;
+}
+
+/**
  * main - entry point
  * @ac: arg count
  * @av: arg vector
@@ -9,14 +38,10 @@
  */
 int main(int ac, char **av)
 {
-	info_t info[] = {INFO_INIT};
+	info_t *info = NULL;
 	int fd = 2;
 
-	asm("mov %1, %0\n\t"
-		"add $3, %0"
-		: "=r"(fd)
-		: "r"(fd));
-
+	init(info);
 	if (ac == 2)
 	{
 		fd = open(av[1], O_RDONLY);

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _exit - exits the shell
+ * _the_exit - exits the shell
  * @info: params
  *  Return: ...
  */
 
-int _exit(info_t *info)
+int _the_exit(info_t *info)
 {
 	int exitcheck;
 
