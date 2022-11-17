@@ -74,5 +74,3 @@ There is no known bugs at the moment.
  $ echo "/bin/ls" | ./hsh
 .br
  hsh main.c shell.c
-.SH AUTHORS
-Mariem Matri, Inès Chokri
